@@ -1,0 +1,52 @@
+
+.container{
+  flex-direction: column;
+}
+.ti{
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.pp{
+  margin-bottom: 20px;
+}
+.page-body{
+  display: flex;
+  width: 100%;
+  text-align: center;
+  height: 100%;
+
+}
+.place{
+  background-color: aquamarine;
+  border-radius: 20px;
+  align-items: center;
+  text-align: center;
+  line-height: 0 auto;
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width:70%;
+}
+.schoolcon{
+  height: 30px;
+  padding-top: 10px;
+}
+.school{
+  background-color: gainsboro;
+  border-radius: 30px;
+  align-items: center;
+  text-align: center;
+  margin-inline-end: 10px;
+  padding: 5px;  
+}
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+}

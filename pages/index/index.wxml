@@ -1,0 +1,61 @@
+<!--index.wxml-->
+
+<view class="ti" >
+<view class="pp">
+  <text>
+北信科空教室查询小程序
+Thanks Bistutu App ‘s Api
+</text>
+<view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      当前校区：{{array[index]}}
+    </view>
+  </picker>
+</view>
+<radio-group bindchange="bandleChange">
+  <text>日期:</text>
+  <radio checked="true"  color="red" value="today"> 今天</radio>
+  <radio color="red" value="tomorrow"> 明天</radio>
+  <radio color="red" value="after"> 后天</radio>
+</radio-group>
+</view>
+
+
+
+
+  <view class='page-body' wx:for="{{list}}" wx:key="id">
+
+    <block  wx:if="{{item.a=== ''}}">
+    
+    </block>
+    <block wx:elif="{{item.a === '1'}}" >
+      <block wx:if="{{ item.b === '到底了~'}}"></block>
+      <block wx:else="">
+        <view class="place">
+          <text> {{ item.b}}</text>
+       </view>
+      </block>
+  </block>    
+  <block class="school" wx:elif="{{item.a === '无'}}">
+  <view class="school">
+    <text> {{ item.a}}</text>
+  </view>
+  </block>
+  <block class="schoolcon" wx:else="">
+  <view class="schoolcon">
+    <block wx:if="{{ item.a === ''}}"></block>
+    <block wx:else=""><text  class="school" > {{ item.a}}</text></block>
+    <block wx:if="{{ item.b === ''}}"></block>
+    <block wx:else=""><text  class="school" > {{ item.b}}</text></block>
+    <block wx:if="{{ item.c === ''}}"></block>
+    <block wx:else=""><text  class="school" > {{ item.c}}</text></block>
+    <block wx:if="{{ item.d === ''}}"></block>
+    <block wx:else=""> <text  class="school" > {{ item.d}}</text></block>
+  </view>
+
+  </block>
+    
+  
+  </view>
+</view>
