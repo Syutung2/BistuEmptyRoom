@@ -39,10 +39,33 @@ Page( {
   bandleChange(e){
     // 1 获取单选框中的值
     let gender = e.detail.value;
+    this.setData( {
+      a1 : 0,
+      a2 : 0,
+      a3 : 0,
+      a4:0
+        })    
     // 2 把值赋值给 data 中的数据
     if (gender == "today") {
+      var timestamp = Date.parse(new Date());
+var date = new Date(timestamp);
+//获取年份  
+var Y =date.getFullYear();
+//获取月份  
+var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+//获取当日日期 
+var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
+console.log("当前时间：" + Y + '年'  + M+ '月' + D+ '日' ); 
+this.setData(
+  {
+    month: M,
+    day:D,
+    year:Y
+  }
+)
       this.load(this.data.day,this.data.month)
     } else if  (gender == "tomorrow") {
+
       var m = this.data.month
       var day = this.data.day
       if (m === 1 || m === 3 || m === 5 || m === 7 || m === 8 || m === 10 || m === 11) {
