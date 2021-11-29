@@ -29,7 +29,12 @@ Page( {
     radio:0,
     month:0,
     day:1,
-    year:0
+    year:0,
+    a1 : 0,
+    a2 : 0,
+    a3 : 0,
+    a4:0,
+    currday : 0
   },
   bandleChange(e){
     // 1 获取单选框中的值
@@ -125,6 +130,29 @@ Page( {
       )
     }
   },
+  bandleChange2(e){
+    let gender = e.detail.value;
+    if (gender == "all") {
+      this.setData({
+        currday:0
+      })
+    } else if (gender == "shangwu") {
+      this.setData({
+        currday:1
+      })
+    } else if (gender == "xiawu") {
+      this.setData({
+        currday:2
+      })
+    } else if (gender == "wanshang") {
+      this.setData({
+        currday:3
+      })
+    } 
+    this.load(this.data.day,this.data.month)
+
+  },
+
 
   bindPickerChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
@@ -138,11 +166,54 @@ Page( {
     wx.request( {
       url: "https://www.thinkstu.com/"+that.data.index+"/"+that.data.index+m+d+".json",
       success: function( res ) {
+        for (var index in res.data) {
+            if (res.data[index].b === "到底了~") {
+              console.info(index)
+              if (that.data.a1 === 0) {
+                that.setData( {
+                  a1: index
+                })     
+              } else {
+                if (that.data.a2 === 0) {
+                  that.setData( {
+                    a2: index
+                  })               
+                 } else {
+                  if (that.data.a3 === 0) {
+                    that.setData( {
+                      a3: index
+                    })
+                  } else {
+                    that.setData( {
+                      a4: index
+                    })
+                  }
+                }
+              }
+            } else {
+              
+            }
+        }
         console.info(res.data[1].a)
-        that.setData( {
-          data:res.data,
-          list: res.data
-        })
+        var cur = that.data.currday
+        if (cur === 0) {
+          that.setData( {
+            list: res.data.slice(0,that.data.a1)
+          })
+        } else if (cur === 1) {
+          that.setData( {
+            list: res.data.slice(that.data.a1,that.data.a2)
+          })
+        } else if (cur === 2) {
+          that.setData( {
+            list: res.data.slice(that.data.a2,that.data.a3)
+          })
+        } else if (cur === 3) {
+          that.setData( {
+            list: res.data.slice(that.data.a3,that.data.a4)
+          })
+        } 
+        
       }
     })
   },

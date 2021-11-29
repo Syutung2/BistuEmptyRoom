@@ -19,6 +19,14 @@ Thanks Bistutu App ‘s Api
   <radio color="red" value="tomorrow"> 明天</radio>
   <radio color="red" value="after"> 后天</radio>
 </radio-group>
+<radio-group bindchange="bandleChange2">
+  <text>时段:</text>
+  <radio checked="true"  color="red" value="all"> 所有</radio>
+  <radio color="red" value="shangwu"> 上午</radio>
+  <radio color="red" value="xiawu"> 下午</radio>
+  <radio color="red" value="wanshang"> 晚上</radio>
+
+</radio-group>
 </view>
 
 
