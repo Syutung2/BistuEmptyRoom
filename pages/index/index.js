@@ -37,7 +37,6 @@ Page( {
     currday : 0
   },
   bandleChange(e){
-    // 1 获取单选框中的值
     let gender = e.detail.value;
     this.setData( {
       a1 : 0,
@@ -45,7 +44,6 @@ Page( {
       a3 : 0,
       a4:0
         })    
-    // 2 把值赋值给 data 中的数据
     if (gender == "today") {
       var timestamp = Date.parse(new Date());
 var date = new Date(timestamp);
@@ -180,8 +178,13 @@ this.setData(
   bindPickerChange: function(e) {
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      index: e.detail.value
+      index: e.detail.value,
+      a1 : 0,
+      a2 : 0,
+      a3 : 0,
+      a4:0
     })
+    wx.setStorageSync('xiaoqu', e.detail.value)
     this.load(this.data.day,this.data.month)
   },
   load : function(d,m){
@@ -241,7 +244,16 @@ this.setData(
     })
   },
   onLoad: function( options ) {
-
+    var rrrr = wx.getStorageSync('xiaoqu')
+    if (rrrr === null || rrrr === '') {
+      this.setData({
+        index:1
+      })
+    } else {
+      this.setData({
+        index:rrrr
+      })
+    }
 var timestamp = Date.parse(new Date());
 var date = new Date(timestamp);
 //获取年份  
