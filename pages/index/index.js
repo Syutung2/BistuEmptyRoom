@@ -36,6 +36,10 @@ Page( {
     a4:0,
     currday : 0
   },
+  but(e){
+    this.load(this.data.day,this.data.month)
+
+  },
   bandleChange(e){
     let gender = e.detail.value;
     this.setData( {
@@ -61,7 +65,6 @@ this.setData(
     year:Y
   }
 )
-      this.load(this.data.day,this.data.month)
     } else if  (gender == "tomorrow") {
 
       var m = this.data.month
@@ -99,7 +102,6 @@ this.setData(
           day+=1
         }
       }
-      this.load(day,m)
       this.setData(
         {
           month: m,
@@ -142,7 +144,6 @@ this.setData(
           day+=2
         }
       }
-      this.load(day,m)
       this.setData(
         {
           month: m,
@@ -170,7 +171,6 @@ this.setData(
         currday:3
       })
     } 
-    this.load(this.data.day,this.data.month)
 
   },
 
@@ -185,7 +185,6 @@ this.setData(
       a4:0
     })
     wx.setStorageSync('xiaoqu', e.detail.value)
-    this.load(this.data.day,this.data.month)
   },
   load : function(d,m){
     var that = this;
@@ -270,7 +269,6 @@ this.setData(
     year:Y
   }
 )
-this.load(D,M)
   }
 })
 

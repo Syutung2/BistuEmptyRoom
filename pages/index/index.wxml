@@ -27,6 +27,7 @@ Thanks Bistutu App ‘s Api
   <radio color="red" value="wanshang"> 晚上</radio>
 
 </radio-group>
+<button bindtap="but" style="width: 100%; margin-top: 15px;" type="primary" >查询</button>
 </view>
 
 
