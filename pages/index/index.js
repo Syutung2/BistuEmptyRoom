@@ -66,9 +66,15 @@ this.setData(
   }
 )
     } else if  (gender == "tomorrow") {
+      var timestamp = Date.parse(new Date());
+var date = new Date(timestamp);
+//获取年份  
+var Y =date.getFullYear();
+//获取月份  
+var m = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+//获取当日日期 
+var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
 
-      var m = this.data.month
-      var day = this.data.day
       if (m === 1 || m === 3 || m === 5 || m === 7 || m === 8 || m === 10 || m === 11) {
         if (day+1> 31) {
           m+=1
@@ -109,8 +115,15 @@ this.setData(
         }
       )
     }else{
-      var m = this.data.month
-      var day = this.data.day
+      var timestamp = Date.parse(new Date());
+      var date = new Date(timestamp);
+      //获取年份  
+      var Y =date.getFullYear();
+      //获取月份  
+      var m = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+      //获取当日日期 
+      var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
+      
       if (m === 1 || m === 3 || m === 5 || m === 7 || m === 8 || m === 10 || m === 11) {
         if (day+2> 31) {
           m+=1
