@@ -17,23 +17,36 @@
 
 }
 .place{
-  background-color: aquamarine;
-  border-radius: 20px;
+  background-color: indigo;
+  color: white;
+  border-radius: 10px;
   align-items: center;
-  text-align: center;
+  text-align: start;
   line-height: 0 auto;
   padding: 5px;
   margin-bottom: 5px;
   margin-top: 5px;
-  width:70%;
+  width:100%;
 }
 .schoolcon{
   height: 30px;
+  width: auto;
   padding-top: 10px;
+}
+.schoolcon2{
+  height: auto;
+  width: 100%;
+  
+  background-color: gainsboro;
+  border-radius: 30px;
+  align-items: center;
+  text-align: center;
+  padding: 5px;  
 }
 .school{
   background-color: gainsboro;
-  border-radius: 30px;
+  border-radius: 10px;
+  width: 20%;
   align-items: center;
   text-align: center;
   margin-inline-end: 10px;

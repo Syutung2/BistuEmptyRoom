@@ -2,32 +2,33 @@
 
 <view class="ti" >
 <view class="pp">
-  <text>
+<text  style="margin-bottom: 6px;" >
 北信科空教室查询小程序
-Thanks Bistutu App ‘s Api
+Thanks Bistutu App's Api
+
 </text>
 <view class="section">
-  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+  <picker  style="margin-bottom: 6px;"  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
     <view class="picker">
-      当前校区：{{array[index]}}
+      当前校区：{{array[index]}} ▼
     </view>
   </picker>
 </view>
-<radio-group bindchange="bandleChange">
+<radio-group style="margin-bottom: 6px;" bindchange="bandleChange">
   <text>日期:</text>
-  <radio checked="true"  color="red" value="today"> 今天</radio>
-  <radio color="red" value="tomorrow"> 明天</radio>
-  <radio color="red" value="after"> 后天</radio>
+  <radio checked="true"  color="#89cff0" value="today"> 今天</radio>
+  <radio color="#89cff0" value="tomorrow"> 明天</radio>
+  <radio color="#89cff0" value="after"> 后天</radio>
 </radio-group>
-<radio-group bindchange="bandleChange2">
+<radio-group style="margin-bottom: 6px;"  bindchange="bandleChange2">
   <text>时段:</text>
-  <radio checked="true"  color="red" value="all"> 所有</radio>
-  <radio color="red" value="shangwu"> 上午</radio>
-  <radio color="red" value="xiawu"> 下午</radio>
-  <radio color="red" value="wanshang"> 晚上</radio>
+  <radio checked="true"  color="#89cff0" value="all"> 所有</radio>
+  <radio color="#89cff0" value="shangwu"> 上午</radio>
+  <radio color="#89cff0" value="xiawu"> 下午</radio>
+  <radio color="#89cff0" value="wanshang"> 晚上</radio>
 
 </radio-group>
-<button bindtap="but" style="width: 100%; margin-top: 15px;" type="primary" >查询</button>
+<button style="background-color: indigo; color: white;" bindtap="but" style="width: 100%; margin-top: 15px;" type="primary" >查询</button>
 </view>
 
 
@@ -46,8 +47,8 @@ Thanks Bistutu App ‘s Api
        </view>
       </block>
   </block>    
-  <block class="school" wx:elif="{{item.a === '无'}}">
-  <view class="school">
+  <block class="schoolcon2" wx:elif="{{item.a === '无'}}">
+  <view class="schoolcon2">
     <text> {{ item.a}}</text>
   </view>
   </block>
@@ -67,4 +68,15 @@ Thanks Bistutu App ‘s Api
     
   
   </view>
+  
+  <block wx:if="{{list.length ==0}}">
+  
+  </block>
+  <block wx:else="">
+    <text style="text-align: center; align-items: center;">由 www.thinkstu.com 提供数据服务\n</text>
+  <text style="text-align: center; align-items: center;">Bug反馈 : 2019011133@bistu.edu.cn\n </text>
+  <text style="text-align: center; align-items: center;">也可关注开发者公众号反馈 </text>
+
+  </block>
+
 </view>
