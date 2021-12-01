@@ -2,34 +2,39 @@
 
 <view class="ti" >
 <view class="pp">
-<text  style="margin-bottom: 6px;" >
-北信科空教室查询小程序
-Thanks Bistutu App's Api
+  <text style="margin-bottom: 6px;">
+    北信科空教室查询小程序
+    Thanks Bistutu App's Api
 
-</text>
-<view class="section">
-  <picker  style="margin-bottom: 6px;"  bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
-    <view class="picker">
-      当前校区：{{array[index]}} ▼
-    </view>
-  </picker>
-</view>
-<radio-group style="margin-bottom: 6px;" bindchange="bandleChange">
-  <text>日期:</text>
-  <radio checked="true"  color="#89cff0" value="today"> 今天</radio>
-  <radio color="#89cff0" value="tomorrow"> 明天</radio>
-  <radio color="#89cff0" value="after"> 后天</radio>
-</radio-group>
-<radio-group style="margin-bottom: 6px;"  bindchange="bandleChange2">
-  <text>时段:</text>
-  <radio checked="true"  color="#89cff0" value="all"> 所有</radio>
-  <radio color="#89cff0" value="shangwu"> 上午</radio>
-  <radio color="#89cff0" value="xiawu"> 下午</radio>
-  <radio color="#89cff0" value="wanshang"> 晚上</radio>
+  </text>
 
-</radio-group>
-<button style="background-color: indigo; color: white;" bindtap="but" style="width: 100%; margin-top: 15px;" type="primary" >查询</button>
-</view>
+  <view class="section">
+    <picker style="margin-bottom: 6px;" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+      <view class="picker">
+        当前校区：{{array[index]}} ▼
+      </view>
+    </picker>
+  </view>
+  <radio-group style="margin-bottom: 6px;" bindchange="bandleChange">
+    <text>日期:</text>
+    <radio checked="true" color="indigo" value="today"> 今天</radio>
+    <radio color="indigo" value="tomorrow"> 明天</radio>
+    <radio color="indigo" value="after"> 后天</radio>
+  </radio-group>
+  <radio-group style="margin-bottom: 6px;" bindchange="bandleChange2">
+    <text>时段:</text>
+    <radio checked="true" color="indigo" value="all"> 所有</radio>
+    <radio color="indigo" value="shangwu"> 上午</radio>
+    <radio color="indigo" value="xiawu"> 下午</radio>
+    <radio color="indigo" value="wanshang"> 晚上</radio>
+
+  </radio-group>
+  <button style="background-color: indigo; color: white;" bindtap="but" style="width: 100%; margin-top: 15px;" type="primary">查询</button>
+
+
+
+  
+  </view>
 
 
 

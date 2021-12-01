@@ -3,6 +3,22 @@
 const app = getApp()
 
 Page( {
+  onShareAppMessage() {
+    const promise = new Promise(resolve => {
+      setTimeout(() => {
+        resolve({
+          title: '北信科空教室查询小程序',
+          
+        })
+      }, 2000)
+    })
+    return {
+      title: '北信科空教室查询小程序',
+      path: '/page/index',
+      imageUrl: "https://www.bistu.edu.cn/images/caiselogo.png" ,
+      promise 
+    }
+  },
   data: {
     data: 'USD',
     list: [],
@@ -40,6 +56,7 @@ Page( {
     this.load(this.data.day,this.data.month)
 
   },
+ 
   bandleChange(e){
     let gender = e.detail.value;
     this.setData( {
@@ -56,7 +73,7 @@ var Y =date.getFullYear();
 //获取月份  
 var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
 //获取当日日期 
-var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
+var D =  date.getDate(); 
 console.log("当前时间：" + Y + '年'  + M+ '月' + D+ '日' ); 
 this.setData(
   {
@@ -73,7 +90,7 @@ var Y =date.getFullYear();
 //获取月份  
 var m = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
 //获取当日日期 
-var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
+var day =  date.getDate(); 
 
       if (m === 1 || m === 3 || m === 5 || m === 7 || m === 8 || m === 10 || m === 11) {
         if (day+1> 31) {
@@ -114,15 +131,17 @@ var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
           day:day,
         }
       )
+      console.log("当前时间：" + Y + '年'  + m+ '月' + day+ '日' ); 
+
     }else{
       var timestamp = Date.parse(new Date());
       var date = new Date(timestamp);
       //获取年份  
       var Y =date.getFullYear();
       //获取月份  
-      var m = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
+      var m = (date.getMonth() + 1 < 10 ?  (date.getMonth() + 1) : date.getMonth() + 1);
       //获取当日日期 
-      var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
+      var day =  date.getDate(); 
       
       if (m === 1 || m === 3 || m === 5 || m === 7 || m === 8 || m === 10 || m === 11) {
         if (day+2> 31) {
@@ -163,6 +182,8 @@ var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
           day:day,
         }
       )
+      console.log("当前时间：" + Y + '年'  + m+ '月' + day+ '日' ); 
+
     }
   },
   bandleChange2(e){
@@ -206,7 +227,6 @@ var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
       success: function( res ) {
         for (var index in res.data) {
             if (res.data[index].b === "到底了~") {
-              console.info(index)
               if (that.data.a1 === 0) {
                 that.setData( {
                   a1: index
@@ -232,7 +252,6 @@ var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
               
             }
         }
-        console.info(res.data[1].a)
         var cur = that.data.currday
         if (cur === 0) {
           that.setData( {
@@ -256,6 +275,9 @@ var day = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
     })
   },
   onLoad: function( options ) {
+    wx.showShareMenu({
+      menus: ['shareAppMessage', 'shareTimeline']
+    })
     var rrrr = wx.getStorageSync('xiaoqu')
     if (rrrr === null || rrrr === '') {
       this.setData({
@@ -273,7 +295,7 @@ var Y =date.getFullYear();
 //获取月份  
 var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
 //获取当日日期 
-var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(); 
+var D =  date.getDate(); 
 console.log("当前时间：" + Y + '年'  + M+ '月' + D+ '日' ); 
 this.setData(
   {

@@ -4,11 +4,16 @@
     "pages/logs/logs"
   ],
   "window":{
+    
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarTextStyle":"black"
+    "navigationBarBackgroundColor": "@navBgColor",
+    "backgroundColor": "@navBgColor",
+    "navigationBarTitleText": "北信科空教室查询",
+    "navigationBarTextStyle":"@navTxtStyle"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "darkmode": true,
+  
+  "themeLocation": "theme.json"
 }
